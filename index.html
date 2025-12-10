@@ -12,7 +12,7 @@
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     
-    <!-- Babel (JSX를 브라우저에서 실행 가능하게 변환) -->
+    <!-- Babel -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <!-- Lucide Icons -->
@@ -30,7 +30,7 @@
         
         body {
             font-family: 'Cafe24Danjeonghae', 'Noto Sans KR', sans-serif;
-            background-color: #000; /* 기본 배경색 (전체 화면) */
+            background-color: #000;
             color: white;
             overflow: hidden;
             user-select: none;
@@ -68,7 +68,7 @@
         #root {
             width: 100vw;
             height: 100vh;
-            background-color: #00264B; /* 기본 앱 배경색 */
+            background-color: #00264B;
             position: relative;
             overflow: hidden;
         }
@@ -102,7 +102,7 @@
                     fill="none"
                     stroke={color}
                     strokeWidth={2}
-                    strokeLinecap="round"
+                    strokeLinecap={2}
                     strokeLinejoin="round"
                     className={className}
                     {...attrs}
@@ -804,7 +804,7 @@
                                     <h3 className="text-sm font-bold text-gray-400 mb-3 flex items-center gap-1"><Icon name="TrendingUp" size={16} className="text-red-400" /> 실시간 인기 검색</h3>
                                     <div className="grid grid-cols-2 gap-3">
                                         {REALTIME_SEARCH_TERMS.slice(0, 6).map((term, idx) => (
-                                            <button key={idx} onClick={() => { setSearchTerm(term); searchInputRef.current?.blur(); }} className="flex items-center text-left gap-2 text-sm text-white hover:text-blue-300 transition-colors truncate">
+                                            <button key={idx} onClick={() => handleSearchTermClick(term)} className="flex items-center text-left gap-2 text-sm text-white hover:text-blue-300 transition-colors truncate">
                                                 <span className={`font-bold w-4 ${idx < 3 ? 'text-yellow-400' : 'text-gray-500'}`}>{idx + 1}</span>
                                                 <span className="truncate">{term}</span>
                                             </button>
@@ -961,7 +961,7 @@
                 </section>
 
 
-                /* 4. Daily Recommendations */
+                {/* 4. Daily Recommendations */}
                 <section className="max-w-7xl mx-auto px-6">
                     <h2 className="text-xl font-bold mb-4 px-1 flex items-center gap-2 text-white"><Icon name="Calendar" size={20} /> 화요일 추천 웹툰</h2>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -980,7 +980,7 @@
                     </div>
                 </section>
 
-                /* 5. Real-time Ranking (Re-arranged) */
+                {/* 5. Real-time Ranking (Re-arranged) */}
                 <section className="max-w-7xl mx-auto bg-[#0f1524] rounded-3xl p-6 border border-white/5 px-6">
                     <div className="flex justify-between items-center mb-6">
                         <h2 className="text-xl font-bold flex items-center gap-2 text-red-400"><Icon name="Flame" size={20} /> 실시간 베스트</h2>
@@ -1013,7 +1013,7 @@
                     </div>
                 </section>
 
-                /* 6. Wait for Free */
+                {/* 6. Wait for Free */}
                 <section className="max-w-7xl mx-auto px-6">
                     <h2 className="text-xl font-bold mb-4 px-1 flex items-center gap-2 text-yellow-200"><Icon name="Clock" size={20} /> 기다리면 무료</h2>
                     <div className="flex gap-4 overflow-x-auto pb-4 custom-scrollbar snap-x px-1">
@@ -1034,7 +1034,7 @@
                     </div>
                 </section>
 
-                /* 8. Webtoon / Webnovel Best (Re-arranged) */
+                {/* 8. Webtoon / Webnovel Best (Re-arranged) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto px-6">
                     <section>
                         <h2 className="text-xl font-bold mb-4 px-1 text-green-300">웹툰 베스트</h2>
@@ -1137,7 +1137,7 @@
                                             {book.progress === 100 ? '정주행 완료' : (book.progress === 0 ? '읽기 시작' : `${book.progress}% 진행중`)}
                                         </span>
                                         <div className="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
-                                            <div className={`h-full bg-blue-400`} style={{width: `${book.progress}%`}}></div>
+                                            <div className={`h-full ${book.progress === 100 ? 'bg-green-400' : 'bg-blue-400'}`} style={{width: `${book.progress}%`}}></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1540,6 +1540,7 @@
             const [currentBg, setCurrentBg] = useState(BACKGROUNDS[0]);
             const [currentVoice, setCurrentVoice] = useState(VOICES[0]);
             const [currentCostume, setCurrentCostume] = useState(COSTUMES[0]);
+            const [showCollection, setShowCollection] = useState(false);
 
 
             const handleCharacterClick = (index) => {
