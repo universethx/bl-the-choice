@@ -164,23 +164,24 @@
 
         const PURCHASED_BOOKS = [
             { id: 101, title: '차가운 밤의 구원', type: '웹툰', isExclusive: true, progress: 65 },
-            { id: 102, title: '황제의 정부', type: '웹소설', isExclusive: true, progress: 100 },
-            { id: 103, title: '비밀스러운 수업', type: '웹툰', isExclusive: false, progress: 30 },
-            { id: 104, title: '오피스 허즈번드', type: '웹소설', isExclusive: false, progress: 0 },
-            { id: 105, title: '새벽 2시의 고백', type: '웹툰', isExclusive: false, progress: 100 },
+            { id: 102, title: '이웃집 길드원', type: '웹툰', isExclusive: true, progress: 100 },
+            { id: 103, title: '스케치', type: '웹툰', isExclusive: false, progress: 30 },
+            { id: 104, title: '불우한 삶', type: '웹소설', isExclusive: false, progress: 0 },
+            { id: 105, title: '물가의 밤', type: '웹툰', isExclusive: false, progress: 100 },
         ];
 
         const EXCLUSIVE_NEW_RELEASES = [
-            { title: "비밀스러운 각인", author: "A 작가", tags: "오메가버스", icon: "Crown", coverColor: "bg-purple-700" },
-            { title: "검은 태양의 주인", author: "B 작가", tags: "현대판타지", icon: "Shield", coverColor: "bg-red-700" },
-            { title: "공작의 위험한 취미", author: "C 작가", tags: "서양풍", icon: "Key", coverColor: "bg-indigo-700" },
+            { title: "징크스", author: "밍과", tags: "현대/일상", icon: "Crown", coverColor: "bg-purple-700" },
+            { title: "야화첩", author: "변덕", tags: "동양/시대물", icon: "Shield", coverColor: "bg-red-700" },
+            { title: "페이백", author: "푸죠킹", tags: "현대/일상", icon: "Key", coverColor: "bg-indigo-700" },
         ];
 
         const LATEST_NEW_RELEASES = [
-            { title: "팀장님의 지시", author: "D 작가", tags: "오피스", icon: "Users", coverColor: "bg-green-700" },
-            { title: "회귀자 vs 악역공", author: "E 작가", tags: "회귀/드라마", icon: "RefreshCcw", coverColor: "bg-blue-700" },
-            { title: "첫사랑의 덫", author: "F 작가", tags: "학원물", icon: "Heart", coverColor: "bg-pink-700" },
+            { title: "원룸 조교님", author: "지붕", tags: "현대", icon: "Users", coverColor: "bg-green-700" },
+            { title: "가족간계증명서", author: "E 작가", tags: "현대/판타지", icon: "RefreshCcw", coverColor: "bg-blue-700" },
+            { title: "홍실퀘스트", author: "숲이랑", tags: "현대/판타지", icon: "Heart", coverColor: "bg-pink-700" },
         ];
+
 
         const REALTIME_SEARCH_TERMS = [
             '불우한 삶', '이웃집 길드원', '패션', '뉴비와 올드비의 공생관계', '스케치'
@@ -701,23 +702,23 @@
           }, []);
           
           const DAILY_PICKS = [
-              { title: "나의 독재자", img: "Book", author: "김작가" },
-              { title: "위험한 계약", img: "Zap", author: "이작가" },
-              { title: "새벽 2시", img: "Moon", author: "박작가" },
-              { title: "오피스 허즈번드", img: "Heart", author: "최작가" },
-              { title: "길들여지다", img: "Lock", author: "정작가" }
+              { title: "시절인연", img: "Book", author: "썸머" },
+              { title: "해빙곡선", img: "Zap", author: "피비" },
+              { title: "뿌리 없는 나무", img: "Moon", author: "라포" },
+              { title: "언슬립", img: "Heart", author: "현외" },
+              { title: "백라이트", img: "Lock", author: "강또" }
           ];
 
           const EXCLUSIVE_NEW_RELEASES = [
-            { title: "비밀스러운 각인", author: "A 작가", tags: "오메가버스", icon: "Crown", coverColor: "bg-purple-700" },
-            { title: "검은 태양의 주인", author: "B 작가", tags: "현대판타지", icon: "Shield", coverColor: "bg-red-700" },
-            { title: "공작의 위험한 취미", author: "C 작가", tags: "서양풍", icon: "Key", coverColor: "bg-indigo-700" },
+            { title: "징크스", author: "밍과", tags: "현대/일상", icon: "Crown", coverColor: "bg-purple-700" },
+            { title: "야화첩", author: "변덕", tags: "동양/조선", icon: "Shield", coverColor: "bg-red-700" },
+            { title: "페이백", author: "푸죠킹 samk", tags: "현대/일상", icon: "Key", coverColor: "bg-indigo-700" },
           ];
 
           const LATEST_NEW_RELEASES = [
-            { title: "팀장님의 지시", author: "D 작가", tags: "오피스", icon: "Users", coverColor: "bg-green-700" },
-            { title: "회귀자 vs 악역공", author: "E 작가", tags: "회귀/드라마", icon: "RefreshCcw", coverColor: "bg-blue-700" },
-            { title: "첫사랑의 덫", author: "F 작가", tags: "학원물", icon: "Heart", coverColor: "bg-pink-700" },
+            { title: "원룸 조교님", author: "지붕", tags: "현대", icon: "Users", coverColor: "bg-green-700" },
+            { title: "가족간계증명서", author: "소루", tags: "현대/판타지", icon: "RefreshCcw", coverColor: "bg-blue-700" },
+            { title: "홍실퀘스트", author: "숲이랑", tags: "현대/판타지", icon: "Heart", coverColor: "bg-pink-700" },
           ];
 
           const RANKING_FILTERS = [
@@ -770,8 +771,8 @@
                   {/* 3. Profile (Far Right) */}
                   <div className="flex items-center gap-4 cursor-pointer hover:bg-white/5 p-2 rounded-lg transition-colors" onClick={() => onNavigate('profile')}>
                       <div className="leading-tight text-right">
-                          <div className="text-base font-bold">우주님</div>
-                          <div className="text-xs text-blue-200">LV. 1</div>
+                          <div className="text-base font-bold">우주인님</div>
+                          <div className="text-xs text-blue-200">LV. 999</div>
                       </div>
                       <div className="w-12 h-12 rounded-full bg-gray-700 overflow-hidden border-2 border-white/20 flex items-center justify-center">
                           <Icon name="User" className="text-gray-400" size={28} />
@@ -1199,7 +1200,7 @@
                                <Icon name="User" size={64} className="text-gray-400" />
                            </div>
                            <div className="text-center md:text-left mb-4 md:mb-2">
-                               <h2 className="text-3xl font-bold text-white drop-shadow-md">우주님</h2>
+                               <h2 className="text-3xl font-bold text-white drop-shadow-md">우주인님</h2>
                                <span className="text-sm text-blue-200 bg-blue-900/80 px-3 py-1 rounded-full mt-2 inline-block border border-blue-500/30">LV. 1 New Reader</span>
                            </div>
                        </div>
@@ -1288,10 +1289,10 @@
             const script = [
                 { name: '', text: "차가운 공기가 폐부를 찌른다. 익숙한 겨울 냄새... 이곳에 다시 돌아오게 될 줄은 몰랐다." },
                 { name: '???', text: "오랜만이네. 이렇게 다시 보게 될 줄은 몰랐어. 기다리고 있었어." },
-                { name: '나', text: "(그 목소리에 천천히 고개를 들었다. 눈앞에 서 있는 건... 기억 속의 그 사람이다.)" },
-                { name: '강현', text: "왜 그렇게 놀란 표정이야? 도망친 건 너였잖아. 이제 도망갈 곳은 없어." },
-                { name: '나', text: "강현아... 그게 아니야. 난 그때..." },
-                { name: '강현', text: "변명은 필요 없어. 이제 널 놓아주지 않을 거니까." },
+                { name: '채이언(player)', text: "(그 목소리에 천천히 고개를 들었다. 눈앞에 서 있는 건... 기억 속의 그 사람이다.)" },
+                { name: '서 단', text: "왜 그렇게 놀란 표정이야? 도망친 건 너였잖아. 이제 도망갈 곳은 없어." },
+                { name: '채이언', text: "강현아... 그게 아니야. 난 그때..." },
+                { name: '서 단단', text: "변명은 필요 없어. 이제 널 놓아주지 않을 거니까." },
             ];
             
             const handleNext = () => {
@@ -1513,7 +1514,7 @@
 
         // --- My Home Screen (New Live2D Space) ---
         function MyHomeScreen({ onBack, onNavigate }) {
-            const [message, setMessage] = useState("어서오세요, 우주님!");
+            const [message, setMessage] = useState("어서오세요, 우주인님!");
             const [showControls, setShowControls] = useState(false);
             const [charCount, setCharCount] = useState(1); // 1, 2, 3
             const [aiMode, setAiMode] = useState(false);
@@ -1548,18 +1549,18 @@
                 let msgs = [];
                 if (aiMode) {
                     msgs = [
-                        "우주님의 취향을 분석해봤어요. 이런 분위기 좋아하시죠?",
+                        "우주인님의 취향을 분석해봤어요. 이런 분위기 좋아하시죠?",
                         "지난번에 읽으신 작품... 저랑 비슷했나요?",
-                        "우주님, 오늘은 좀 피곤해보이세요. 쉬어가세요.",
-                        "데이터 분석 완료. 우주님을 위한 맞춤 대사입니다.",
-                        `우주님, ${index + 1}번 캐릭터가 마음에 드시나요?`
+                        "우주인님, 오늘은 좀 피곤해보이세요. 쉬어가세요.",
+                        "데이터 분석 완료. 우주인님을 위한 맞춤 대사입니다.",
+                        `우주인님, ${index + 1}번 캐릭터가 마음에 드시나요?`
                     ];
                 } else {
                     msgs = [
                         "오늘도 보러 와주셨군요.",
                         "기다리고 있었어요.",
                         "다음 이야기가 궁금하지 않으신가요?",
-                        "우주님, 오늘은 어떤 선택을 하실 건가요?",
+                        "우주인님, 오늘은 어떤 선택을 하실 건가요?",
                         "제 목소리가 들리시나요?"
                     ];
                 }
@@ -1837,3 +1838,4 @@
     </script>
 </body>
 </html>
+
