@@ -5,31 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>BL: The Choice</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (HTTPS 경로 명시) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- React & ReactDOM -->
+    <!-- React & ReactDOM (HTTPS 경로 명시) -->
     <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
     
-    <!-- Babel (JSX를 브라우저에서 실행 가능하게 변환) -->
+    <!-- Babel (JSX를 브라우저에서 실행 가능하게 변환) (HTTPS 경로 명시) -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
-    <!-- Lucide Icons -->
+    <!-- Lucide Icons (HTTPS 경로 명시) -->
     <script src="https://unpkg.com/lucide@0.263.1"></script>
 
     <style>
+        /* [수정] Cafe24Danjeonghae 폰트 로딩 경로를 제거하고 Noto Sans KR만 사용하도록 정리 */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;700&display=swap');
         
-        @font-face { 
+        /* @font-face { 
             font-family: 'Cafe24Danjeonghae'; 
             src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/Cafe24Danjeonghae.woff') format('woff'); 
             font-weight: normal; 
             font-style: normal; 
-        }
+        } */
         
         body {
-            font-family: 'Cafe24Danjeonghae', 'Noto Sans KR', sans-serif;
+            /* [수정] 기본 폰트를 Noto Sans KR로 설정 */
+            font-family: 'Noto Sans KR', sans-serif; 
             background-color: #000; /* 기본 배경색 (전체 화면) */
             color: white;
             overflow: hidden;
@@ -1791,7 +1793,7 @@
                   case 'ageGate': return <AgeGateScreen onSelect={(mode) => { setUserMode(mode); navigateTo('filter'); }} />;
                   case 'filter': return <FilterScreen userMode={userMode} onComplete={(data) => { setSelections(data); navigateTo('lobby'); }} onRestart={() => navigateTo('ageGate')} playSfx={playSoundEffect} />;
                   
-                  case 'collection': return <CollectionScreen onBack={() => navigateTo('myhome')} />; // 마이홈으로 돌아가도록 수정
+                  case 'collection': return <CollectionScreen onBack={() => navigateTo('backToMyHome')} />; // 컬렉션 닫기 시 myhome으로 가도록 수정
 
                   case 'lobby': return (
                       <>
